@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div style="margin-left: 10px;">
+    <img
+          width="40"
+          alt="Angular Logo"
+          src="https://media.istockphoto.com/vectors/email-flat-icon-notification-message-or-email-icon-logo-design-open-vector-id1312185268?k=20&m=1312185268&s=170667a&w=0&h=Ek27n9aPmJYWmh28z0VmKnZcopZnIWta__eT_F1SleA="
+        />
+    </div>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/consultarSaldo">Aplicacion Locatel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/consultarSaldo">Consultar Saldo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/crearCuenta">Crear cuenta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/consignar">Consignar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/retirar">Retirar</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="alert alert-primary" role="alert">
+      <a class="alert-link">Consultar saldo de la cuenta</a>
+    </div>
+  </div>
+    <br>
+    <div class="div card" style="margin-left: 200px; margin-right:200px; margin-top: 40px;">
+        <div class="card-body">
+            <form #formClient = "ngForm" (ngSubmit) = "onClickSubmit(formClient.value)" >
+                <div class="mb-3">
+                <label for="account_number" class="form-label">Número de cuenta</label>
+                <input class="form-control" type = "text" name = "account_number" ngModel>
+                </div>
+                <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input class="form-control" type = "text" name = "password"  ngModel>
+                </div>
+                <br/>
+                <input class="btn btn-primary" type = "submit" value = "Consultar" (click)="openModal()">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
